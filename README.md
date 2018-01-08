@@ -7,6 +7,13 @@ So far only the unix/linux script exists. At least a windows script will follow 
 
 Inspired by the answer in https://askubuntu.com/a/599041
 
+Prerequisites
+-------------
+
+- adb installed and in $PATH
+- ssh key to be used is already created
+- phone is in developer mode
+
 Usage
 -----
 
