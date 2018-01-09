@@ -8,8 +8,20 @@ if ([string]::IsNullOrWhiteSpace($keyfile)) {
     exit 1
 }
 
-if (!(select-string -quiet "public key" $keyfile)) {
-    echo "$keyfile does not seem to be a public key file"
+function Check-Keyfile {
+param (
+	[string]$filename
+)
+	[string]$content = Get-Content $filename
+
+	if ($content.StartsWith("ssh-dss")) { return $true }
+	if ($content.StartsWith("ssh-rsa")) { return $true }
+	if ($content.StartsWith("ecdsa-sha2-nistp")) { return $true }
+	return $false
+}
+
+if (!(Check-Keyfile $keyfile)) {
+    echo "$keyfile does not seem to be a public key file or has the wrong format (OpenSSH public key format required)"
     exit 2
 }
 
