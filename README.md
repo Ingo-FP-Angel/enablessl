@@ -3,7 +3,7 @@ enablessh
 
 This is a collection of scripts to automate enabling SSH and transferring the correct public key to a smartphone running Ubuntu Touch.
 
-So far only the unix/linux script exists. At least a windows script will follow (don't have access to mac...)
+There is one unix/linux script and one for windows (don't have access to mac...)
 
 Inspired by the answer in https://askubuntu.com/a/599041
 
@@ -18,6 +18,10 @@ Usage
 -----
 
     enablessh_unix.sh <public key file to use>
+	
+or
+
+	enablessh_windows.ps1 <public key file to use>
 
 Output will look like
 
