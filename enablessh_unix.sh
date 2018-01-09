@@ -23,7 +23,7 @@ adb shell test -d /home/phablet/.ssh \|\| mkdir /home/phablet/.ssh \&\& chmod 70
 
 echo
 echo "Transferring keyfile $keyfile"
-adb push /home/ingo/.ssh/id_ecdsa_phablet.pub /home/phablet/.ssh/tempkey.pub
+adb push $keyfile /home/phablet/.ssh/tempkey.pub
 adb shell chmod 600 /home/phablet/.ssh/tempkey.pub
 
 echo
