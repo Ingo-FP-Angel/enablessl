@@ -11,7 +11,7 @@ Prerequisites
 -------------
 
 - adb installed and in $PATH
-- ssh key to be used is already created
+- ssh key to be used is already created (OpenSSH public key format)
 - phone is in developer mode
 
 Usage
