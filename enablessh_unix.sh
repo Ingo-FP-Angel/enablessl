@@ -7,8 +7,8 @@ fi
 
 keyfile=$1
 
-if !(file "$keyfile" | grep -q "public key"); then
-    echo "$keyfile does not seem to be a public key file"
+if !(file "$keyfile" | grep -q -G "OpenSSH .* public key"); then
+    echo "$keyfile does not seem to be a public key file or has the wrong format (OpenSSH public key format required)"
     exit 2
 fi
 
